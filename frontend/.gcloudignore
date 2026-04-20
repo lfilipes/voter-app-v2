@@ -1,0 +1,14 @@
+# .gcloudignore
+.git
+.gitignore
+node_modules/
+build/
+.idea/
+.vscode/
+*.log
+.env
+.env.local
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,13 @@
+# frontend/app.yaml
+runtime: python312  # Um runtime é necessário, mesmo para conteúdo estático
+service: default
+handlers:
+- url: /(.*\.(gif|png|jpg|css|js|ico|json|svg|txt|html|xml|webmanifest|woff|woff2|ttf|eot))$
+  static_files: build/\1
+  upload: build/.*\.(gif|png|jpg|css|js|ico|json|svg|txt|html|xml|webmanifest|woff|woff2|ttf|eot)$
+  secure: always
+
+- url: /(.*)  # Redireciona todas as outras rotas para o index.html
+  static_files: build/index.html
+  upload: build/index.html
+  secure: always
